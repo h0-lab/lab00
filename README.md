@@ -1,25 +1,27 @@
-# Profiles REST API CRUD
+# REST API CRUD
+
+ > Endpoint address: `$host_addr:$port/profiles/:id`
 
 This example demonstrates how to use Go kit to implement a REST-y HTTP service.
-It leverages the excellent [gorilla mux package](https://github.com/gorilla/mux) for routing.
+It leverages the excellent [gorilla mux package](httpsgithub.comgorillamux) for routing.
 
-Run the example with the optional port address for the service: 
+Run the example with the optional port address for the service 
 
 ```bash
-$ go run ./cmd/profilesvc/main.go -http.addr :8080
-ts=2018-05-01T16:13:12.849086255Z caller=main.go:47 transport=HTTP addr=:8080
+$ go run .cmdprofilesvcmain.go -http.addr 8080
+ts=2018-05-01T161312.849086255Z caller=main.go47 transport=HTTP addr=8080
 ```
 
-Create a Profile:
+Create a Profile
 
 ```bash
-$ curl -d '{"id":"1234","Name":"Go Kit"}' -H "Content-Type: application/json" -X POST http://localhost:8080/profiles/
+$ curl -d '{id1234,NameGo Kit}' -H Content-Type applicationjson -X POST httplocalhost8080profiles
 {}
 ```
 
 Get the profile you just created
 
 ```bash
-$ curl localhost:8080/profiles/1234
-{"profile":{"id":"1234","name":"Go Kit"}}
+$ curl localhost8080profiles1234
+{profile{id1234,nameGo Kit}}
 ```
